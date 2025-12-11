@@ -54,9 +54,3 @@
 ## Patient Dashboard
 - List of upcoming appointments  
 - Button to create a new appointment   
-
-## Appointment Pages
-- Index: list of appointments  
-- Show: appointment details  
-- New: create form  
-- Edit: update form  
