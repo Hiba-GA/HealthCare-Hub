@@ -53,8 +53,7 @@
 
 ## Patient Dashboard
 - List of upcoming appointments  
-- Button to create a new appointment  
-- Link to view medical records  
+- Button to create a new appointment   
 
 ## Appointment Pages
 - Index: list of appointments  
