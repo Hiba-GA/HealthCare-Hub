@@ -45,7 +45,7 @@
 - **Authorization** will hide edit/delete buttons from users who do not own the data.
 - **Navigation links** will allow users to move through the app easily.
 
-# Mockup (Wireframe Overview)
+# Mockup 
 
 ## Home Page
 - Login and Signup links  
