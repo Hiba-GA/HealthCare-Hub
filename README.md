@@ -47,10 +47,5 @@
 
 # Mockup 
 
-## Home Page
-- Login and Signup links  
-- Simple introduction to the app
+![Mockup](https://raw.githubusercontent.com/Hiba-GA/repo/main/mockup.png)
 
-## Patient Dashboard
-- List of upcoming appointments  
-- Button to create a new appointment   
