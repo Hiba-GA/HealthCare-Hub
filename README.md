@@ -47,5 +47,5 @@
 
 # Mockup 
 
-![Mockup](https://raw.githubusercontent.com/Hiba-GA/repo/main/mockup.png)
+![Mockup](https://raw.githubusercontent.com/Hiba-GA/repo/main/Mockup.png)
 
