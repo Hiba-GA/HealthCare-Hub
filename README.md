@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##  **Screenshot / Logo**
 
 ![App Screenshot](public/images/Screenshot.png)
@@ -34,13 +33,11 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 # User Stories
 
 ## Patients
->>>>>>> 6ac1ba54bd3828505fd7a3ff90c434e455da8a32
 - **As a patient, I want to create an account so that I can access my medical information.**
 - **As a patient, I want to book an appointment so that I can visit a doctor.**
 - **As a patient, I want to view my upcoming appointments so that I can plan my schedule.**
 - **As a patient, I want to view my medical records so that I can understand my health history.**
 
-<<<<<<< HEAD
 ### Entities
  ![ERD](/public/images/ERD.png)
 #### User
@@ -48,14 +45,12 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 # Entities
 
 ## User
->>>>>>> 6ac1ba54bd3828505fd7a3ff90c434e455da8a32
 - **_id:** ObjectId  
 - **name:** String  
 - **email:** String  
 - **password:** String  
 - **role:** String (patient)
 
-<<<<<<< HEAD
 #### Appointment
 - **_id:** ObjectId  
 - **patient:** ObjectId (ref User)   
@@ -64,26 +59,21 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 - **_id:** ObjectId  
 - **patient:** ObjectId (ref User)  
 - **doctor:** ObjectId (ref User)  
->>>>>>> 6ac1ba54bd3828505fd7a3ff90c434e455da8a32
 - **date:** Date  
 - **reason:** String  
 - **status:** String (scheduled)
 
-<<<<<<< HEAD
 #### Relationships
 =======
 # Relationships
->>>>>>> 6ac1ba54bd3828505fd7a3ff90c434e455da8a32
 
 **User 1 → Many Appointments**   
 **Appointment Many → 1 User (patient)**  
 **Appointment Many → 1 User (doctor)**  
 
-<<<<<<< HEAD
 ### How the App Will Render
 =======
 # How the App Will Render
->>>>>>> 6ac1ba54bd3828505fd7a3ff90c434e455da8a32
 
 - **EJS templates** will be used for all pages.
 - A **main layout** will include navigation and structure.
@@ -95,7 +85,6 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 - **Authorization** will hide edit/delete buttons from users who do not own the data.
 - **Navigation links** will allow users to move through the app easily.
 
-<<<<<<< HEAD
 ### Mockup 
 
 ![Mockup](/public/images/Mockup.png)
@@ -137,4 +126,3 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 # Mockup 
 
 ![Mockup](https://raw.githubusercontent.com/Hiba-GA/HealthCare-Hub/main/Mockup.png)
->>>>>>> 6ac1ba54bd3828505fd7a3ff90c434e455da8a32
