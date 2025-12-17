@@ -1,7 +1,7 @@
 ##  **Screenshot / Logo**
 
 ![App Screenshot](public/images/Screenshot.png)
-![Logo](public/images/logo.png)
+![Logo](public/images/Logo.png)
 
 ---
 
@@ -41,10 +41,6 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 ### Entities
  ![ERD](/public/images/ERD.png)
 #### User
-=======
-# Entities
-
-## User
 - **_id:** ObjectId  
 - **name:** String  
 - **email:** String  
@@ -53,28 +49,17 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 
 #### Appointment
 - **_id:** ObjectId  
-- **patient:** ObjectId (ref User)   
-=======
-## Appointment
-- **_id:** ObjectId  
 - **patient:** ObjectId (ref User)  
-- **doctor:** ObjectId (ref User)  
 - **date:** Date  
 - **reason:** String  
 - **status:** String (scheduled)
 
 #### Relationships
-=======
-# Relationships
-
 **User 1 → Many Appointments**   
 **Appointment Many → 1 User (patient)**  
 **Appointment Many → 1 User (doctor)**  
 
 ### How the App Will Render
-=======
-# How the App Will Render
-
 - **EJS templates** will be used for all pages.
 - A **main layout** will include navigation and structure.
 - Each entity will have:
@@ -121,8 +106,3 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 - Add user profile editing and password reset
 
 ---
-
-=======
-# Mockup 
-
-![Mockup](https://raw.githubusercontent.com/Hiba-GA/HealthCare-Hub/main/Mockup.png)
