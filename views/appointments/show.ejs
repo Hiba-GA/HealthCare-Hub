@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /> <!-- page encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- responsive layout -->
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!-- main stylesheet -->
+    <title>
+      Appointment on <%= appointment.date %> for <%= appointment.user.username %> <!-- dynamic page title -->
+    </title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %> <!-- include navigation bar -->
+
+    <h1>
+      Appointment on <%= appointment.date %> for <%= appointment.user.username %> <!-- page heading -->
+    </h1>
+
+    <h2>Details</h2> <!-- details section -->
+    <p>User: <%= appointment.user.username %></p> <!-- show username -->
+    <p>Date: <%= appointment.date %></p> <!-- show date -->
+    <p>Reason: <%= appointment.reason %></p> <!-- show reason -->
+
+    <% if (appointment.user._id.equals(user._id)) { %> <!-- check if user owns appointment -->
+
+      <!-- delete button -->
+      <form action="/appointments/<%= appointment._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete this appointment</button>
+      </form>
+
+      <!-- edit link -->
+      <a href="/appointments/<%= appointment._id %>/edit">Edit Appointment</a>
+
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> <!-- page encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- responsive layout -->
+  <link rel="stylesheet" href="/stylesheets/style.css"> <!-- main stylesheet -->
+  <title>Sign Up | Healthcare Hub</title> <!-- page title -->
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %> <!-- include navigation bar -->
+
+  <!-- sign up container -->
+  <div style="max-width: 400px; margin: 40px auto; padding: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+    <!-- logo and heading -->
+    <div style="text-align: center;">
+      <img src="/images/Logo.png" alt="Logo" style="height: 60px; margin-bottom: 10px;"> <!-- app logo -->
+      <h2 style="color: #2c3e50;">Create a new account!</h2> <!-- form title -->
+    </div>
+
+    <!-- sign up form -->
+    <form action="/auth/sign-up" method="POST" style="display: flex; flex-direction: column;">
+
+      <!-- username field -->
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required />
+
+      <!-- email field -->
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required />
+
+      <!-- password field -->
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required />
+
+      <!-- confirm password field -->
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" required />
+
+      <!-- submit button -->
+      <button type="submit" style="margin-top: 20px; padding: 10px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> <!-- page encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- responsive layout -->
+  <link rel="stylesheet" href="/stylesheets/style.css"> <!-- main stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- icons -->
+  <title>Upcoming Appointments</title> <!-- page title -->
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %> <!-- navigation bar -->
+
+  <h1>Upcoming Appointments</h1> <!-- page heading -->
+
+  <table> <!-- appointments table -->
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Reason</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% appointments.forEach((appointment) => { %> <!-- loop through appointments -->
+        <tr>
+          <td><%= appointment.user.username %></td> <!-- show username -->
+          <td><%= appointment.date.toDateString() %></td> <!-- show date -->
+          <td><%= appointment.reason %></td> <!-- show reason -->
+
+          <td>
+            <% if (user && appointment.user._id.toString() === user._id.toString()) { %> <!-- check ownership -->
+
+              <!-- edit button -->
+              <a href="/appointments/<%= appointment._id %>/edit" title="Edit">
+                <i class="fas fa-edit" style="color: green; margin-right:10px;"></i>
+              </a>
+
+              <!-- delete button triggers popup -->
+              <form 
+                action="/appointments/<%= appointment._id %>?_method=DELETE" 
+                method="POST" 
+                style="display:inline;"
+                onsubmit="event.preventDefault(); openPopup(this);" 
+              >
+                <button type="submit" style="background:none; border:none;" title="Delete">
+                  <i class="fas fa-trash-alt" style="color: red;"></i>
+                </button>
+              </form>
+
+            <% } %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <!-- button to create new appointment -->
+  <div style="text-align:center; margin-top:30px;">
+    <a href="/appointments/new">
+      <button style="padding:10px 20px; background-color:#3498db; color:white; border:none; border-radius:5px; cursor:pointer;">
+        New Appointment
+      </button>
+    </a>
+  </div>
+
+  <!-- delete confirmation popup -->
+  <div id="confirmPopup" class="popup-overlay" style="display:none;">
+    <div class="popup-box">
+      <h3>Delete Appointment</h3> <!-- popup title -->
+      <p>Are you sure you want to delete this appointment?</p> <!-- confirmation text -->
+
+      <div class="popup-buttons"> <!-- popup action buttons -->
+        <button id="confirmDeleteBtn" class="delete-btn">Delete</button> <!-- confirm delete -->
+        <button id="cancelBtn" class="cancel-btn">Cancel</button> <!-- cancel delete -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let deleteForm = null // store form reference
+
+    function openPopup(form) { // show popup
+      deleteForm = form
+      document.getElementById("confirmPopup").style.display = "flex"
+    }
+
+    document.getElementById("cancelBtn").onclick = function () { // close popup
+      document.getElementById("confirmPopup").style.display = "none"
+    }
+
+    document.getElementById("confirmDeleteBtn").onclick = function () { // submit delete
+      deleteForm.submit()
+    }
+  </script>
+
+</body>
+</html>

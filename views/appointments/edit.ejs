@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /> <!-- page character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- responsive layout -->
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!-- main stylesheet -->
+    <title>Edit Appointment</title> <!-- page title -->
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %> <!-- include navigation bar -->
+
+    <h1>Edit an Appointment!</h1> <!-- page heading -->
+
+    <!-- form to update an existing appointment -->
+    <form action="/appointments/<%= appointment._id %>?_method=PUT" method="POST">
+
+      <!-- date field -->
+      <label for="date">Date:</label>
+      <input 
+        type="date" 
+        name="date" 
+        id="date" 
+        value="<%= appointment.date.toISOString().split('T')[0] %>" 
+        required
+      />
+
+      <!-- reason field -->
+      <label for="reason">Reason:</label>
+      <input
+        type="text"
+        name="reason"
+        id="reason"
+        value="<%= appointment.reason %>"
+        required
+      />
+
+      <!-- submit button -->
+      <button type="submit">Edit Appointment</button>
+    </form>
+
+  </body>
+</html>
