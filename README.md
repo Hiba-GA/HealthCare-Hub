@@ -25,14 +25,6 @@ This app was inspired by the need for a clean, beginner-friendly interface that 
 ### User Stories
 
 #### Patients
-=======
-# App Idea
-
-**HealthCare Hub** is a medical clinic management application where patients can book appointments. The app includes authentication, authorization, and full CRUD functionality using Node, Express, MongoDB, and EJS.
-
-# User Stories
-
-## Patients
 - **As a patient, I want to create an account so that I can access my medical information.**
 - **As a patient, I want to book an appointment so that I can visit a doctor.**
 - **As a patient, I want to view my upcoming appointments so that I can plan my schedule.**
